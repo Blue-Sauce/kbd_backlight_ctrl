@@ -52,6 +52,7 @@ int countdown = 0;
 int timeout = 0;
 int threads_active = 1;
 int fd = -1;
+int kbd_light_set = 0;
 char* kbd_events_device = NULL;
 pthread_t thread_countdown;
 pthread_t thread_keyevents;
