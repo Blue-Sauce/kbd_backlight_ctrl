@@ -52,7 +52,7 @@ int countdown = 0;
 int timeout = 0;
 int threads_active = 1;
 int fd = -1;
-int kbd_light_set = 0;
+int kbd_light_level = 0;
 char* kbd_events_device = NULL;
 pthread_t thread_countdown;
 pthread_t thread_keyevents;
@@ -126,7 +126,7 @@ void* keyevents_thread(void *unused)
 			pthread_mutex_lock(&mut);
 			if (countdown < 2)
 			{
-				kbd_light_set(1);
+				kbd_light_set(kbd_light_level);
 				set_kbd_light = 1;
 			}
 			countdown = timeout;
@@ -197,9 +197,9 @@ void init_param(void)
 	s = getenv("KBD_BACKLIGHT_CTRL_BRIGHTNESS");
 	if (s != NULL)
 	{
-		kbd_light_set = s;
+		kbd_light_level = s;
 	}
-	else kbd_light_set = KBD_BACKLIGHT_BRIGHTNESS_DEFAULT;
+	else kbd_light_level = KBD_BACKLIGHT_BRIGHTNESS_DEFAULT;
 }
 
 int main()
@@ -212,7 +212,7 @@ int main()
 
 	init_param();
 	dbus_setup();
-	/*kbd_light_set(1);*/
+	kbd_light_set(kbd_light_level);
 	sem_init(&sem, 0, 0);
 	pthread_mutex_init(&mut, NULL);
 	pthread_attr_init(&attr);
