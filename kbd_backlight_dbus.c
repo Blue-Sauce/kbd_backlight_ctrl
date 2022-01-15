@@ -50,6 +50,7 @@ void kbd_light_set(int val)
 #if (DEBUG_ON)
 	if (val == 0)      printf("Turn off keyboard backlight\n");
 	else if (val == 1) printf("Turn on keyboard backlight\n");
+	else if (val == 2) printf("Turn on keyboard backlight, brightness level 2\n");
 	else printf("Unknown keyboard backlight parameter\n");
 #endif
 	param = (dbus_uint32_t) val;
