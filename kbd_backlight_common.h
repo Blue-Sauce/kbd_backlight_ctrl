@@ -35,6 +35,7 @@
 #endif
 #define KBD_EVENTS_DEVICE_DEFAULT          "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
 #define KBD_BACKLIGHT_TIMEOUT_DEFAULT       (60)
+#define KBD_BACKLIGHT_BRIGHTNESS_DEFAULT       (1)
 
 #if (DEBUG_ON)
 
