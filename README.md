@@ -20,7 +20,7 @@ For other Linux distributions, you may need to change the following:
 
 You can configure the timeout period in `kbd_backlight_ctrl.service`, at the line which defines `KBD_BACKLIGHT_CTRL_TIMEOUT`.
 
-For devices, such as thinkpads, which offer multiple brightness levels you can configure the level in `kbd_backlight_ctrl.service`, at the line which defines `KBD_BACKLIGHT_CTRL_BRIGHTNESS`.
+For devices which offer multiple brightness levels, such as thinkpads, you can configure the level in `kbd_backlight_ctrl.service`, at the line which defines `KBD_BACKLIGHT_CTRL_BRIGHTNESS`.
 
 The dependencies for building are:
 * dbus
