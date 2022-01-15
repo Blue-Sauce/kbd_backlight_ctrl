@@ -199,7 +199,7 @@ void init_param(void)
 	{
 		kbd_light_set = s;
 	}
-	else kbd_light_set = KBD_EVENTS_BRIGHTNESS_DEFAULT;
+	else kbd_light_set = KBD_BACKLIGHT_BRIGHTNESS_DEFAULT;
 }
 
 int main()
