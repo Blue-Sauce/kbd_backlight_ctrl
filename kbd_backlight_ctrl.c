@@ -197,7 +197,7 @@ void init_param(void)
 	s = getenv("KBD_BACKLIGHT_CTRL_BRIGHTNESS");
 	if (s != NULL)
 	{
-		kbd_light_level = s;
+		kbd_light_level = atoi(s);
 	}
 	else kbd_light_level = KBD_BACKLIGHT_BRIGHTNESS_DEFAULT;
 }
