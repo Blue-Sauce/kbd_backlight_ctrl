@@ -192,6 +192,13 @@ void init_param(void)
 		fprintf(stderr, "ERROR: %s is not readable!\n", kbd_events_device);
 		exit(1);
 	}
+	s = NULL;
+	s = getenv("KBD_BACKLIGHT_CTRL_BRIGHTNESS");
+	if (s != NULL)
+	{
+		kbd_light_set = s;
+	}
+	else kbd_events_brightness = KBD_EVENTS_BRIGHTNESS_DEFAULT;
 }
 
 int main()
@@ -204,7 +211,7 @@ int main()
 
 	init_param();
 	dbus_setup();
-	kbd_light_set(1);
+	/*kbd_light_set(1);*/
 	sem_init(&sem, 0, 0);
 	pthread_mutex_init(&mut, NULL);
 	pthread_attr_init(&attr);
